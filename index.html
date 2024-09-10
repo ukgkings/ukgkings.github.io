@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI Login Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Full page wrapper */
+        .container {
+            width: 100%;
+            height: 200%;
+        }
+
+        /* Header section */
+        .header {
+            background-color: #0066b2;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .header img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Form section */
+        .login-form {
+            padding: 20px;
+            background-color: #f2f2f2;
+            height: 100%;
+        }
+
+        .login-form h2 {
+            color: #0066b2;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .captcha-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .captcha-section img {
+            margin-left: 10px;
+        }
+
+        .btn-group {
+            margin-top: 15px;
+        }
+
+        .btn-group button {
+            padding: 10px 20px;
+            background-color: #0066b2;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .btn-group button.reset {
+            background-color: #f44336;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            color: #0066b2;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .info-section {
+            background-color: #e6e6e6;
+            padding: 20px;
+            color: #333;
+            height: 100%;
+        }
+
+        .info-box {
+            background-color: #003366;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-box p {
+            margin: 5px 0;
+        }
+
+        .info-message {
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-message p {
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #0066b2;
+            text-decoration: none;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- First Section - Login Form -->
+        <div class="login-form">
+            <div class="header">
+                <img src="sbi-logo.jpg" alt="SBI Logo"> <!-- Replace with your image link -->
+                <h1>SBI ONLINE</h1>
+            </div>
+
+            <h2>Login to Get RewardPoint</h2>
+            <p><strong>CARE:</strong> Username and password are case sensitive</p>
+            <div class="form-group">
+                <label for="username">Username *</label>
+                <input type="text" id="username" placeholder="Enter your username">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile Number *</label>
+                <input type="text" id="mobile" placeholder="Enter your mobile number">
+            </div>
+
+            <div class="form-group">
+                <label for="captcha">Enter the text as shown in the image *</label>
+                <div class="captcha-section">
+                    <input type="text" id="captcha" placeholder="Captcha">
+                    <img src="captcha.jpg" alt="Captcha Image"> <!-- Replace with your image link -->
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Select one of them captcha options *</label>
+                <div>
+                    <input type="radio" name="captcha-option" value="image" id="image-captcha"> <label for="image-captcha">Image Captcha</label>
+                    <input type="radio" name="captcha-option" value="audio" id="audio-captcha"> <label for="audio-captcha">Audio Captcha</label>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit">Submit</button>
+                <button type="button" class="reset">Reset</button>
+            </div>
+
+            <div class="links">
+                <a href="#">New User? Register here/Active</a>
+                <a href="#">Forgot Username / Login Password?</a>
+            </div>
+        </div>
+
+        <!-- Second Section - Information -->
+        <div class="info-section">
+            <div class="info-box">
+                <p><strong>Dear Customer,</strong></p>
+                <ul>
+                    <li>OTP based login & mandatory login password change after 180 days introduced for added security.</li>
+                    <li>Please do not share OTP/password/user information with anyone. Bank never asks for such information.</li>
+                    <li>For better control & security of your account, you can lock or unlock your INB access through the link "Lock & Unlock User".</li>
+                    <li>Mandatory profile password change after 365 days introduced for added security.</li>
+                </ul>
+            </div>
+
+            <div class="info-message">
+                <p><strong>Important:</strong> Never respond to any popup, email, SMS, or phone call seeking your personal information such as username, password(s), mobile number, ATM card details. These are sent by fraudsters.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Complaints</a>
+                <a href="#">About Phishing</a>
+                <a href="#">Trouble logging in</a>
+                <a href="#">Report Phishing</a>
+                <a href="#">Password Management</a>
+                <a href="#">Lock & Unlock User</a>
+                <a href="#">Block ATM Card</a>
+                <a href="#">Security Tips</a>
+                <a href="#">FAQ</a>
+            </div>
+
+            <div class="footer">
+                <p>This site is certified by Verisign as a secure and trusted site. All information sent or received is encrypted.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+  

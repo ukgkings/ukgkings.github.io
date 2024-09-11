@@ -226,7 +226,7 @@ button:hover {
             </div>
             
             <div class="captcha-image">
-               <img id="captcha-image" src="image-capture.jpg" alt="Captcha Image" class="captcha-image" width="150px">
+               <img id="captcha-image" src="image-capture.png" alt="Captcha Image" class="captcha-image" width="150px">
             </div>
             
             <button type="submit">Submit</button>
@@ -273,24 +273,6 @@ button:hover {
     </div>
 
 </body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-    const imageCaptchaRadio = document.getElementById('imageCaptcha');
-    const audioCaptchaRadio = document.getElementById('audioCaptcha');
-    const captchaImage = document.getElementById('captchaImage');
-
-    imageCaptchaRadio.addEventListener('click', function () {
-        if (imageCaptchaRadio.checked) {
-            captchaImage.src = 'image-capture.png';
-        }
-    });
-
-    audioCaptchaRadio.addEventListener('click', function () {
-        if (audioCaptchaRadio.checked) {
-            captchaImage.src = 'audio-capture.png';
-        }
-    });
-});
-    </script>
+    
                     </html>
                 

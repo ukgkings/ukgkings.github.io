@@ -3,90 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canara Bank Net Banking</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>SBI Login Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Full page wrapper */
+        .container {
+            width: 100%;
+            height: 200%;
+        }
+
+        /* Header section */
+        .header {
+            background-color: #0066b2;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .header img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Form section */
+        .login-form {
+            padding: 20px;
+            background-color: #f2f2f2;
+            height: 100%;
+        }
+
+        .login-form h2 {
+            color: #0066b2;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 13px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .captcha-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .captcha-section img {
+            margin-left: 10px;
+        }
+
+        .btn-group {
+            margin-top: 15px;
+        }
+
+        .btn-group button {
+            padding: 4px 2px;
+            background-color: #0066b2;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .btn-group button.reset {
+            background-color: #f44336;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            color: #0066b2;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .info-section {
+            background-color: #e6e6e6;
+            padding: 2px;
+            color: #333;
+            height: 100%;
+        }
+
+        .info-box {
+            background-color: #003366;
+            color: white;
+            padding: 3px;
+            margin-bottom: 20px;
+        }
+
+        .info-box p {
+            margin: 5px 0;
+        }
+
+        .info-message {
+            background-color: #f1f1f1;
+            padding: 3px;
+            margin-bottom: 20px;
+        }
+
+        .info-message p {
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 2px;
+        }
+
+        .footer-links a {
+            color: #0066b2;
+            text-decoration: none;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            padding: 2px;
+            text-align: center;
+            color: #666;
+        }
+
+    </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <img src="images/Logo-new-white_mob.png" alt="Canara Bank Logo" class="logo">
-    </header>
+    <div class="container">
+        <img src="sbi-logo.jpg" alt="SBI Logo"> 
+        <!-- First Section - Login Form -->
+        <div class="login-form">
+            <div class="header">
 
-    <!-- Login Form -->
-    <section class="login-container">
-        <h1>Welcome To <span>Net Banking</span></h1>
-        
-        <form>
-            <div class="input-group">
-                <label for="user-id">Phone Number</label>
-                <input type="text" id="user-id" placeholder="User ID" required>
+                <h1>SBI ONLINE</h1>
             </div>
 
-            <div class="input-group">
-                <label for="password">Customer ID</label>
-                <input type="password" id="password" placeholder="Password" required>
+            <h2>Login to Get RewardPoint</h2>
+            <p><strong>CARE:</strong> Username and password are case sensitive</p>
+            <div class="form-group">
+                <label for="username">Username *</label>
+                <input type="text" id="username" placeholder="Enter your username">
             </div>
 
-            <div class="captcha-group">
-                <label for="captcha">Captcha</label>
-                <input type="text" id="captcha" placeholder="Enter Captcha" required>
-                <img src="images/image-capture.png" alt="Image Captcha" class="captcha-image">
-                <img src="images/refresh-icon.png" alt="Refresh Captcha" class="refresh-icon">
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" placeholder="Enter your password">
             </div>
 
-            <div class="audio-captcha">
-                <input type="radio" name="captcha" id="audio-captcha" value="audio">
-                <label for="audio-captcha">Audio Captcha</label>
-                <img src="images/audio-capture.png" alt="Audio Captcha" class="audio-image">
+            <div class="form-group">
+                <label for="mobile">Mobile Number *</label>
+                <input type="text" id="mobile" placeholder="Enter your mobile number">
             </div>
 
-            <div class="language-selection">
-                <label for="language">Language</label>
-                <select id="language">
-                    <option value="English">English</option>
-                    <option value="Hindi">Hindi</option>
-                </select>
+            <div class="form-group">
+                <label for="captcha">Enter the text as shown in the image *</label>
+                <div class="captcha-section">
+                    <input type="text" id="captcha" placeholder="Captcha">
+                    <img src="captcha.jpg" alt="Captcha Image"> <!-- Replace with your image link -->
+                </div>
             </div>
 
-            <button type="submit" class="login-btn">LOGIN</button>
-        </form>
+            <div class="form-group">
+                <label>Select one of them captcha options *</label>
+                <div>
+                    <input type="radio" name="captcha-option" value="image" id="image-captcha"> <label for="image-captcha">Image Captcha</label>
+                    <input type="radio" name="captcha-option" value="audio" id="audio-captcha"> <label for="audio-captcha">Audio Captcha</label>
+                </div>
+            </div>
 
-        <div class="extra-links">
-            <button>Create/Reset Login Password</button>
-            <button>Unlock User ID</button>
-            <button>Activate User ID</button>
-            <button>New User Registration</button>
-            <button>PFMS Login</button>
+            <div class="btn-group">
+                <button type="submit">Submit</button>
+                <button type="button" class="reset">Reset</button>
+            </div>
+
+            <div class="links">
+                <a href="#">New User? Register here/Active</a>
+                <a href="#">Forgot Username / Login Password?</a>
+            </div>
         </div>
-    </section>
 
-    <!-- Secure GlobalSign -->
-    <div class="secure-global">
-        <img src="images/secure-globalsign.png" alt="Secure Global Sign" class="secure-global-image">
+        <!-- Second Section - Information -->
+        <div class="info-section">
+            <div class="info-box">
+                <p><strong>Dear Customer,</strong></p>
+                <ul>
+                    <li>OTP based login & mandatory login password change after 180 days introduced for added security.</li>
+                    <li>Please do not share OTP/password/user information with anyone. Bank never asks for such information.</li>
+                    <li>For better control & security of your account, you can lock or unlock your INB access through the link "Lock & Unlock User".</li>
+                    <li>Mandatory profile password change after 365 days introduced for added security.</li>
+                </ul>
+            </div>
+
+            <div class="info-message">
+                <p><strong>Important:</strong> Never respond to any popup, email, SMS, or phone call seeking your personal information such as username, password(s), mobile number, ATM card details. These are sent by fraudsters.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Complaints</a>
+                <a href="#">About Phishing</a>
+                <a href="#">Trouble logging in</a>
+                <a href="#">Report Phishing</a>
+                <a href="#">Password Management</a>
+                <a href="#">Lock & Unlock User</a>
+                <a href="#">Block ATM Card</a>
+                <a href="#">Security Tips</a>
+                <a href="#">FAQ</a>
+            </div>
+
+            <div class="footer">
+                <p>This site is certified by Verisign as a secure and trusted site. All information sent or received is encrypted.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Social Media Links -->
-    <div class="connect">
-        <p>Connect with us:</p>
-        <div class="connect-icons">
-            <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
-            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-            <a href="#"><img src="images/pinterest.png" alt="Pinterest"></a>
-        </div>
-    </div>
-
-    <footer>
-    <p>For safe usage and better experience of Internet Banking, Kindly login through <span class="highlight">Incognito Mode</span>.</p>
-    <p>For assistance, please contact our Help Desk No. 1800 1030 OR</p>
-    <button class="complaint-btn">Register & Track Complaint</button>
-    </footer>
-    <!-- Floating Bot Icon -->
-    <div class="floating-icon"></div>
-
-    <script src="js/scripts.js"></script>
 </body>
-</html>
+                    </html>
+                

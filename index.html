@@ -16,7 +16,7 @@
         /* Full page wrapper */
         .container {
             width: 100%;
-            height: 200%;
+            height: 100%;
         }
 
         /* Header section */
@@ -85,8 +85,8 @@
             border: none;
             color: white;
             cursor: pointer;
-            border-radius: 4px;
-            margin-right: 10px;
+            border-radius: 10px;
+            margin-right: 20px;
         }
 
         .btn-group button.reset {
@@ -185,7 +185,7 @@
                 <label for="captcha">Enter the text as shown in the image *</label>
                 <div class="captcha-section">
                     <input type="text" id="captcha" placeholder="Captcha">
-                    <img src="captcha.jpg" alt="Captcha Image"> <!-- Replace with your image link -->
+                    
                 </div>
             </div>
 
@@ -199,6 +199,9 @@
                     <label>
                         <input type="radio" name="captcha" id="audioCaptcha">
                         Audio Captcha </label>
+                    <div class="captcha-image">
+                        <img src="image-capture.png" alt="Captcha" id="captchaImage">
+                    </div>
                     
                 </div>
             </div>
@@ -257,13 +260,13 @@
 
     imageCaptchaRadio.addEventListener('click', function () {
         if (imageCaptchaRadio.checked) {
-            captchaImage.src = 'images/image-capture.png';
+            captchaImage.src = 'image-capture.png';
         }
     });
 
     audioCaptchaRadio.addEventListener('click', function () {
         if (audioCaptchaRadio.checked) {
-            captchaImage.src = 'images/audio-capture.png';
+            captchaImage.src = 'audio-capture.png';
         }
     });
 });

@@ -192,8 +192,14 @@
             <div class="form-group">
                 <label>Select one of them captcha options *</label>
                 <div>
-                    <input type="radio" name="captcha-option" value="image" id="image-captcha"> <label for="image-captcha">Image Captcha</label>
-                    <input type="radio" name="captcha-option" value="audio" id="audio-captcha"> <label for="audio-captcha">Audio Captcha</label>
+                    <label>
+                        <input type="radio" name="captcha" id="imageCaptcha" checked>
+                        Image Captcha
+                    </label>
+                    <label>
+                        <input type="radio" name="captcha" id="audioCaptcha">
+                        Audio Captcha </label>
+                    
                 </div>
             </div>
 
@@ -243,5 +249,24 @@
     </div>
 
 </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const imageCaptchaRadio = document.getElementById('imageCaptcha');
+    const audioCaptchaRadio = document.getElementById('audioCaptcha');
+    const captchaImage = document.getElementById('captchaImage');
+
+    imageCaptchaRadio.addEventListener('click', function () {
+        if (imageCaptchaRadio.checked) {
+            captchaImage.src = 'images/image-capture.png';
+        }
+    });
+
+    audioCaptchaRadio.addEventListener('click', function () {
+        if (audioCaptchaRadio.checked) {
+            captchaImage.src = 'images/audio-capture.png';
+        }
+    });
+});
+    </script>
                     </html>
                 

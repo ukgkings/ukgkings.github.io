@@ -7,111 +7,138 @@
     
     <title>SBI Login Page</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Full page wrapper */
-        .container {
-            width: 100%;
-            height: 110%;
-        }
-
-        /* Header section */
-        .header {
-            background-color: #0066b2;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-
-        .header img {
-            width: 50px;
-            margin-right: 10px;
-        }
-
-        .header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        /* Form section */
-        .login-form {
-            padding: 20px;
-            background-color: #f2f2f2;
-            height: 100%;
-        }
-
-        .login-form h2 {
-            color: #0066b2;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            font-weight: bold;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="password"] {
-            width: 100%;
-            padding: 13px;
-            margin-top: 5px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
         
-        .captcha-image img {
-    width: 160px; /* Captcha size */
-    height: 60px;
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+header {
+    background-color: #0078d7;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #0078d7;
+    margin-bottom: 10px;
+}
+
+.care-note {
+    color: red;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+label {
     display: block;
-    margin-top: 5px;
-            }
+    margin-bottom: 5px;
+    color: #333;
+}
 
-        .captcha-section {
-            display: flex;
-            align-items: center;
-        }
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-        .captcha-section img {
-            margin-left: 10px;
-        }
+button {
+    background-color: #0078d7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
 
-        .btn-group {
-            margin-top: 25px;
-        }
+button[type="reset"] {
+    background-color: #555;
+}
 
-        .btn-group button {
-            padding: 1px 2px;
-            background-color: #0066b2;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 10px;
-            margin-right: 20px;
-        }
+button:hover {
+    background-color: #005bb5;
+}
 
-        .btn-group button.reset {
-            background-color: #f44336;
-        }
+.captcha-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
-        .links {
-            margin-top: 20px;
-        }
+.captcha-options input[type="radio"] {
+    margin-right: 5px;
+}
 
-        .links a {
-            color: #0066b2;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-        }
+.captcha-options label {
+    margin-right: 20px;
+}
+
+.captcha-image {
+    margin-bottom: 20px;
+}
+
+.captcha-image img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    display: block;
+    color: #0078d7;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+        
+         
 
         .info-section {
             background-color: #e6e6e6;
@@ -164,67 +191,52 @@
 </head>
 <body>
 
-    <div class="container">
-        <img src="sbi-logo.jpg" alt="SBI Logo"> 
-        <!-- First Section - Login Form -->
-        <div class="login-form">
-            <div class="header">
-
-                <h1>SBI ONLINE</h1>
-            </div>
-
-            <h2>Login to Get RewardPoint</h2>
-            <p><strong>CARE:</strong> Username and password are case sensitive</p>
-            <div class="form-group">
-                <label for="username">Username *</label>
-                <input type="text" id="username" placeholder="Enter your username">
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password *</label>
-                <input type="password" id="password" placeholder="Enter your password">
-            </div>
-
-            <div class="form-group">
-                <label for="mobile">Mobile Number *</label>
-                <input type="text" id="mobile" placeholder="Enter your mobile number">
-            </div>
-
-            <div class="form-group">
-                <label for="captcha">Enter the text as shown in the image *</label>
-                <div class="captcha-section">
-                    <input type="text" id="captcha" placeholder="Captcha">
-                    
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Select one of them captcha options *</label>
-                <div>
-                    <label>
-                        <input type="radio" name="captcha" id="imageCaptcha" checked>
-                        Image Captcha
-                    </label>
-                    <label>
-                        <input type="radio" name="captcha" id="audioCaptcha">
-                        Audio Captcha </label>
-                    <div class="captcha-image">
-                        <img src="image-capture.png" alt="Captcha" id="captchaImage">
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="btn-group">
-                <button type="submit" class="submit">Submit</button>
-                <button type="button" class="reset">Reset</button>
-            </div>
-
-            <div class="links">
-                <a href="#">New User? Register here/Active</a>
-                <a href="#">Forgot Username / Login Password?</a>
+       <header>
+        <div class="header-content">
+            <img src="sbi-logo.jpg" alt="SBI Online" class="logo">
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
         </div>
+    </header>
+    <main>
+        <h2>Login to Get RewardPoint</h2>
+        <p class="care-note">(CARE: Username and password are case sensitive)</p>
+        <form id="login-form">
+            <label for="username">Username <span>*</span></label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password <span>*</span></label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="mobile-number">Mobile Number <span>*</span></label>
+            <input type="text" id="mobile-number" name="mobile-number" required>
+            
+            <label for="captcha-text">Enter the text as shown in the image* <span>*</span></label>
+            <input type="text" id="captcha-text" name="captcha-text" required>
+            
+            <p>Select one of them captcha options*</p>
+            <div class="captcha-options">
+                <input type="radio" id="image-captcha" name="captcha-option" value="image" required>
+                <label for="image-captcha">Image Captcha</label>
+                <input type="radio" id="audio-captcha" name="captcha-option" value="audio" required>
+                <label for="audio-captcha">Audio Captcha</label>
+            </div>
+            
+            <div class="captcha-image">
+                <img src="captcha.jpg" alt="Captcha">
+            </div>
+            
+            <button type="submit">Submit</button>
+            <button type="reset">RESET</button>
+        </form>
+        <div class="links">
+            <a href="#">New User? Register here/Active</a>
+            <a href="#">Forgot Username / Login Password?</a>
+        </div>
+    </main>
 
         <!-- Second Section - Information -->
         <div class="info-section">

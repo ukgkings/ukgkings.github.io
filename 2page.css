@@ -65,6 +65,13 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
 button {
     background-color: #f39c12;

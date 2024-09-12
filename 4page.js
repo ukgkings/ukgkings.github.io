@@ -1,6 +1,6 @@
 // Format card number: after every 4 digits, add a space
 document.getElementById('cardNumber').addEventListener('input', function(event) {
-    let input = event.target.value.replace(/\D/g, '').slice(0, 12); // Only digits, max length 12
+    let input = event.target.value.replace(/\D/g, '').slice(0, 16); // Only digits, max length 12
     let formatted = input.match(/.{1,4}/g)?.join(' ') || input; // Add space after every 4 digits
     event.target.value = formatted;
 });

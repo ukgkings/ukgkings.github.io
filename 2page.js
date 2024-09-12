@@ -25,11 +25,7 @@ document.querySelector('button[type="2submit"]').addEventListener('click', funct
     const dob = document.getElementById('dob').value;
 
     // Regex pattern to validate date format dd/mm/yyyy
-    const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
-    if (!datePattern.test(dob)) {
-        alert('Date of Birth must be in the format DD/MM/YYYY.');
-        return;
-    }
+    
 
     // Check if date is valid
     const [day, month, year] = dob.split('/').map(Number);

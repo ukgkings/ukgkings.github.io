@@ -3,15 +3,16 @@ document.getElementById('dob').addEventListener('input', function(event) {
     let input = event.target.value.replace(/\D/g, ''); // Remove non-digits
     let formatted = '';
 
+    // Format input with slashes
     if (input.length > 4) {
-        formatted = `${input.slice(0, 2)}/${input.slice(2, 4)}/${input.slice(4, 8)}`;
+        formatted = `${input.slice(0, 2)}/${input.slice(2, 4)}/${input.slice(4)}`;
     } else if (input.length > 2) {
         formatted = `${input.slice(0, 2)}/${input.slice(2)}`;
     } else {
         formatted = input;
     }
 
-    // Set the formatted value to the input field
+    // Update the input field value
     event.target.value = formatted;
 });
 
@@ -44,3 +45,4 @@ document.querySelector('button[type="2submit"]').addEventListener('click', funct
     // Redirect to 3page.html after validation
     window.location.href = '3page.html';
 });
+        

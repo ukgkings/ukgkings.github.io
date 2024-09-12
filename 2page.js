@@ -1,20 +1,20 @@
-// Function to format DOB input with slashes
-document.getElementById('dob').addEventListener('input', function(event) {
-    let input = event.target.value.replace(/\D/g, ''); // Remove non-digits
-    let formatted = '';
+document.getElementById('dob').addEventListener('input', function(e) {
+            let value = e.target.value;
 
-    // Format input with slashes
-    if (input.length > 4) {
-        formatted = `${input.slice(0, 2)}/${input.slice(2, 4)}/${input.slice(4)}`;
-    } else if (input.length > 2) {
-        formatted = `${input.slice(0, 2)}/${input.slice(2)}`;
-    } else {
-        formatted = input;
-    }
+            // Remove non-digit characters
+            value = value.replace(/\D/g, '');
 
-    // Update the input field value
-    event.target.value = formatted;
-});
+            // Format the value
+            if (value.length > 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2);
+            }
+            if (value.length > 5) {
+                value = value.slice(0, 5) + '/' + value.slice(5);
+            }
+
+            // Set the formatted value
+            e.target.value = value;
+        });
 
 // Event listener for form submission
 document.querySelector('button[type="2submit"]').addEventListener('click', function(event) {

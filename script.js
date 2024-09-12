@@ -1,5 +1,9 @@
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault();
+document.getElementById('mobile-number').addEventListener('input', function(event) {
+    const input = event.target;
+    input.value = input.value.replace(/\D/g, '').slice(0, 10);
+});
 
     // Validate form fields
     const username = document.getElementById('username').value;
@@ -7,11 +11,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     const mobileNumber = document.getElementById('mobile-number').value;
 
     // Check if the mobile number is exactly 10 digits
-    if (mobileNumber.length !== 10 || isNaN(mobileNumber)) {
-        alert('Mobile number must be exactly 10 digits.');
-        return;
-    }
-
+    if (mobileNumber.length === 10) 
     // Redirect to 2page.html after validation
     window.location.href = '2page.html';
 });

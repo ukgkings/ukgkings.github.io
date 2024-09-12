@@ -7,5 +7,5 @@ document.querySelector('button[type="5submit"]').addEventListener('click', funct
     // Additional validation can be added here if needed
 
     // Redirect after validation
-    window.location.href = '6page.html';
+    window.location.href = '7page.html';
 });

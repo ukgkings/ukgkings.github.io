@@ -1,4 +1,3 @@
-// Event listener for mobile number input
 document.getElementById('mobile-number').addEventListener('input', function(event) {
     const input = event.target;
     input.value = input.value.replace(/\D/g, '').slice(0, 10);

